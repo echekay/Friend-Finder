@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <h2>Survey Questions</h2>
+  <hr>
+  <h3>About You</h3>
+  <form>
+    <div class="form-group">
+      <label class="form-control-label" for="formGroupExampleInput">Name (Required)</label>
+      <input type="text" class="form-control" id="friendName" placeholder="Example input">
+    </div>
+    <div class="form-group">
+      <label class="form-control-label" for="formGroupExampleInput2">Link to Photo Image (Required)</label>
+      <input type="text" class="form-control" id="friendPhoto" placeholder="Another input">
+    </div>
+  </form>
+  <div class="form-group">
+    <h3>Question 1</h3>
+    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+    <select class="form-control" id="question1">
+      <!-- Look up how to have placeholder option but not show up when dropdown is clicked. -->
+      <!-- <option>Select an option</option> -->
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <h3>Question 2</h3>
+    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+    <select class="form-control" id="question2">
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <h3>Question 3</h3>
+    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+    <select class="form-control" id="question3">
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <h3>Question 4</h3>
+    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+    <select class="form-control" id="question4">
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+    <div class="form-group">
+    <h3>Question 5</h3>
+    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+    <select class="form-control" id="question5">
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+  </div>
+  <button id="submit" type="submit" class="btn btn-primary btn-block">Submit</button>
+  <br>
+  <footer class="footer">
+    <div class="container">
+      <p><a href="/api/tables">API Table Link</a> | <a href="#">GitHub Repo</a></p>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+
+    var newFriend = {
+      name: $("#friendName").val().trim(),
+      photo: $("#friendPhoto").val().trim(),
+      scores: [
+        $('#question1').val(),
+        $('#question2 option:selected').val(),
+        $('#question3 option:selected').val(),
+        $('#question4 option:selected').val(),
+        $('#question5 option:selected').val()
+      ]
+    };
+    console.log(newFriend);
+  });
+
+</script>
+
+</body>
+</html>
