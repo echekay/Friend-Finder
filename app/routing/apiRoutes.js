@@ -31,7 +31,6 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
 // **************************************************************************
-// THIS RIGHT HERE!! THIS NEEDS TO BE REWORKED TO FUNCTION IN THIS APPLICATION!!!
 // THIS WILL HANDLE THE COMPATABILITY LOGIC OF THE APP.
 // **************************************************************************
   app.post("/api/friends", function(req, res) {
